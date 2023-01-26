@@ -1,1 +1,1 @@
-# 2D-Python-Running-Game
+# 2D runner

@@ -1,4 +1,5 @@
 import pygame
+from player import Player
 
 
 class Game:
@@ -10,6 +11,7 @@ class Game:
         self.fps = 60
         # load app logo ./assets/runner-logo.png
         self.logo = pygame.image.load("./assets/runner-logo.png")
+        self.player = Player(self)
     
     def run(self):
         while self.running:
@@ -17,6 +19,11 @@ class Game:
             self.events()
             self.update()
             self.draw()
+    
+    def load_img(self, path):
+        img = pygame.image.load(path).convert()
+        img.set_colorkey((255, 255, 255))
+        return img
     
     def events(self):
         for event in pygame.event.get():
